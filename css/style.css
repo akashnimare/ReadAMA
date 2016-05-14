@@ -1,0 +1,154 @@
+@import url('http://fonts.googleapis.com/css?family=Oldenburg');
+
+html, body, h1, h2, p,img{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html { overflow-y: scroll; }
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  line-height: 1;
+  color: #616161;
+  padding: 35px 0;
+}
+
+input, textarea { 
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none; 
+}
+img { border: 0; max-width: 100%; }
+h1 { 
+  font-family: 'Oldenburg', Arial, sans-serif;
+  color: #646464;
+  font-size: 4.0em;
+  line-height: 1.6em;
+  margin-bottom: 10px;
+}
+h2 {
+    font-size: 1.1em;
+    line-height: 0.85em;
+    margin-bottom: 4px;
+    color: #888;
+}
+.error 
+  h2 {
+    font-size: 2.1em;
+    line-height: 0.95em;
+    margin-bottom: 4px;
+    color: #888;
+}
+p {
+    font-size: 0.9em;
+    line-height: 1.35em;
+    margin-bottom: 12px;
+}
+a { 
+  color: #8eadd2;
+  font-size:28px;
+  text-decoration: none;
+  margin:11px;
+  padding-top:12px;
+}
+a:hover {
+  color: #6e91b9;
+}
+/* page structure */
+#w {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  background: #f8f8f8;
+  padding: 195px 25px;
+  -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+  -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+  box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#gitapidata {
+  display: block;
+  padding: 25px 0;
+}
+/* input field */
+#gitusername {
+  display: block;
+  padding: 5px 8px;
+  font-size: 2.4em;
+  color: #666;
+  width: 550px;
+  margin-bottom: 15px;
+  margin-left:0; 
+}
+#gitsubmitbtn {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  margin: 0;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  background-color: #eaeaea;
+  background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+  background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+  background-image: -ms-linear-gradient(top, #fafafa, #eaeaea);
+  background-image: -o-linear-gradient(top, #fafafa, #eaeaea);
+  background-image: linear-gradient(#fafafa, #eaeaea);
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-bottom-color: #c5c5c5;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+#gitsubmitbtn:hover {
+  background-color: #dadada;
+  background-image: -webkit-linear-gradient(#eaeaea, #dadada);
+  background-image: -moz-linear-gradient(#eaeaea, #dadada);
+  background-image: -ms-linear-gradient(top, #eaeaea, #dadada);
+  background-image: -o-linear-gradient(top, #eaeaea, #dadada);
+  background-image: linear-gradient(#eaeaea, #dadada);
+  border-color: #ccc #ccc #b5b5b5;
+}
+#gitsubmitbtn:active {
+  background-color:#dadada;
+  background-image: none;
+  border-color: #b5b5b5;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.25);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.25);
+}
+
+.comments{
+display: block;
+font-size: 25px;
+font-family: 'sans-serif';
+line-height: 1.3;
+margin: 30px;
+}
+
+.q {
+    margin: 20px;
+    text-align: left;
+    text-decoration: none;
+    padding: 10px;
+}
+

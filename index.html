@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Create a New Pen</title>
+        <link rel="stylesheet" href="css/style.css">  
+  </head>
+  <body>
+    <!doctype html>
+<html ng-app>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+</head>
+<body ng-controller="gitCtrl">
+<div id="w">
+   <div>
+     <h1>Github AMA Reader</h1>
+      <input type="text" id="gitusername" ng-model="username" placeholder="Sindresorhus">
+      <a href="#" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
+      <div id="gitapidata" class="clearfix"></div>
+   </div>
+   <div ng-show="userNotFound" class="error">
+      <h2>No AMA found for {{username}}. See the full list <a href="https://github.com/sindresorhus/amas">here</a></h2>
+   </div>
+   <div ng-show="loaded">
+    <div ng-repeat="row in user" class="com">
+      <div class="q">{{$index +1}} :  <a href="{{row.comments_url}}" class="info" ng-click="myFunction($event.target.href);$event.preventDefault();$event.stopPropagation();">{{row.title}}</a>
+      </div>
+    </div>
+<div class="comments" ng-repeat="row1 in user1">
+<h2>{{row1.user.login}}</h2> 
+<p>
+ {{row1.body}}
+   </p>
+      </div>
+</div>
+</body>
+</html>
+        <script src="js/index.js"></script>    
+  </body>
+</html>
