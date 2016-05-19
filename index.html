@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Create a New Pen</title>
-        <link rel="stylesheet" href="css/style.css">  
-  </head>
-  <body>
-    <!doctype html>
+<!doctype html>
 <html ng-app>
 <head>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Github AMA reader</title>
+   <link rel="stylesheet" href="css/style.css">  
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 </head>
 <body ng-controller="gitCtrl">
 <div id="w">
@@ -19,23 +14,22 @@
       <a href="#" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
       <div id="gitapidata" class="clearfix"></div>
    </div>
-   <div ng-show="userNotFound" class="error">
-      <h2>No AMA found for {{username}}. See the full list <a href="https://github.com/sindresorhus/amas">here</a></h2>
+   <div ng-show="userNotFound">
+      <h2>No AMA found for this user</h2>
    </div>
    <div ng-show="loaded">
     <div ng-repeat="row in user" class="com">
-      <div class="q">{{$index +1}} :  <a href="{{row.comments_url}}" class="info" ng-click="myFunction($event.target.href);$event.preventDefault();$event.stopPropagation();">{{row.title}}</a>
+      <div class="q">{{$index +1}} :  
+      <a href="{{row.comments_url}}" data-toggel="modal" class="info" 
+      ng-click="myFunction($event.target.href);$event.preventDefault();" ng-class="isActive(row)">{{row.title}}</a>
+    <div ng-repeat="row1 in user1" class="info" ng-if="row.url == row1.issue_url">
+<h2><a class="userlinks" href="{{row1.user.html_url}}">{{row1.user.login}}</h2></a>
+  <p> {{row1.body}}</p>
+        </div>
       </div>
     </div>
-<div class="comments" ng-repeat="row1 in user1">
-<h2>{{row1.user.login}}</h2> 
-<p>
- {{row1.body}}
-   </p>
-      </div>
 </div>
-</body>
-</html>
-        <script src="js/index.js"></script>    
+    <script src="js/index.js"></script> 
+
   </body>
 </html>
