@@ -7,6 +7,7 @@ I love reading amas of some of the [Awesome](https://github.com/sindresorhus/ama
   * <del> Should only list closed issues as those are the answered ones.</del>
   * Only display the author response, not other comments.
   * Needs to render Markdown.
+  * Allow filtering for tags.
   * The styling could use some work. The titles are the bright, making it hard to read. Maybe use Bootstrap or something.
   * <del> Drop the list numbers 1:. It doesn't matter. </del>
   * <del> Don't capitalize the default username in the search input. <del>
