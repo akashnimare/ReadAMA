@@ -2,7 +2,7 @@
       $scope.getGitInfo = function () {
          $scope.userNotFound = false;
          $scope.loaded = false;
-         $http.get("https://api.github.com/repos/" + $scope.username + "/ama/issues?state=all&per_page=300")
+         $http.get("https://api.github.com/repos/" + $scope.username + "/ama/issues?state=closed&per_page=300")
                .success(function (data) {
                   $scope.user = data;
                   $scope.loaded = true;
