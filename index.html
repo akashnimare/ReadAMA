@@ -2,24 +2,25 @@
 <html ng-app>
 <head>
     <meta charset="UTF-8">
-    <title>Github AMA reader</title>
+    <title>GitHub AMA reader</title>
    <link rel="stylesheet" href="css/style.css">  
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
 </head>
 <body ng-controller="gitCtrl">
 <div id="w">
    <div>
-     <h1>Github AMA Reader</h1>
-      <input type="text" id="gitusername" ng-model="username" placeholder="Sindresorhus">
-      <a href="#" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
+     <h1>GitHub AMA Reader</h1>
+      <input type="text" id="gitusername" ng-model="username" placeholder="sindresorhus">
+      <a href="" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
       <div id="gitapidata" class="clearfix"></div>
    </div>
    <div ng-show="userNotFound">
-      <h2>No AMA found for this user</h2>
+     <h2>No AMA found for  {{username}}</h2> See full list <a href="https://github.com/sindresorhus/amas" class="nouser">here</a>.
    </div>
    <div ng-show="loaded">
     <div ng-repeat="row in user" class="com">
-      <div class="q">{{$index +1}} :  
+      <div class="q"> 
       <a href="{{row.comments_url}}" data-toggel="modal" class="info" 
       ng-click="myFunction($event.target.href);$event.preventDefault();" ng-class="isActive(row)">{{row.title}}</a>
     <div ng-repeat="row1 in user1" class="info" ng-if="row.url == row1.issue_url">
@@ -28,6 +29,12 @@
         </div>
       </div>
     </div>
+     <div ng-if="user=='undefined' ||user=='null' || user.length==0 ">
+            <h2>All AMAs are loaded.</h2>               
+        </div>
+       
+   <button id="gitsubmitbtn" ng-click='prePage()'>Previous</button>
+   <button id="gitsubmitbtn" ng-click='nextPage()' ng-hide="user=='undefined' ||user=='null' || user.length==0">Next</a></button>
 </div>
     <script src="js/index.js"></script> 
 
