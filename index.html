@@ -1,41 +1,53 @@
-<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Create a New Pen</title>
-        <link rel="stylesheet" href="css/style.css">  
-  </head>
-  <body>
-    <!doctype html>
-<html ng-app>
+<!doctype html>
+<html>
 <head>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>GitHub AMA reader</title>
+   <link rel="stylesheet" href="css/style.css">  
+
 </head>
-<body ng-controller="gitCtrl">
+<body ng-app="AMA" ng-controller="gitCtrl">
 <div id="w">
+    <a href="https://github.com/akashnimare/ReadAMA"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
    <div>
-     <h1>Github AMA Reader</h1>
-      <input type="text" id="gitusername" ng-model="username" placeholder="Sindresorhus">
-      <a href="#" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
+     <h1>GitHub AMA Reader</h1>
+      <input type="text" id="gitusername" ng-model="username" placeholder="sindresorhus">
+      <a href="" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
       <div id="gitapidata" class="clearfix"></div>
    </div>
-   <div ng-show="userNotFound" class="error">
-      <h2>No AMA found for {{username}}. See the full list <a href="https://github.com/sindresorhus/amas">here</a></h2>
+   <div ng-show="userNotFound">
+     <h2>No AMA found for  {{username}}</h2> See full list <a href="https://github.com/sindresorhus/amas" class="nouser">here</a>.
    </div>
    <div ng-show="loaded">
     <div ng-repeat="row in user" class="com">
-      <div class="q">{{$index +1}} :  <a href="{{row.comments_url}}" class="info" ng-click="myFunction($event.target.href);$event.preventDefault();$event.stopPropagation();">{{row.title}}</a>
+      <div class="q"> 
+      <a href="{{row.comments_url}}" data-toggel="modal" class="info" 
+      ng-click="UserComment($event.target.href);$event.preventDefault();" ng-class="isActive(row)">{{row.title}}</a>
+    <div ng-repeat="row1 in user1" class="info" ng-if="row.url == row1.issue_url">
+<h2><a class="userlinks" href="{{row1.user.html_url}}">{{row1.user.login}}</h2></a>
+  
+<div marked="row1.body" class="mdcomments">
+</div>
+        </div>
       </div>
     </div>
-<div class="comments" ng-repeat="row1 in user1">
-<h2>{{row1.user.login}}</h2> 
-<p>
- {{row1.body}}
-   </p>
-      </div>
+     <div ng-if="user=='undefined' ||user=='null' || user.length==0 ">
+            <h2>All AMAs are loaded.</h2>               
+        </div>
+       
+   <button id="gitsubmitbtn" ng-click='prePage()'>Previous</button>
+   <button id="gitsubmitbtn" ng-click='nextPage()' ng-hide="user=='undefined' ||user=='null' || user.length==0">Next</a></button>
 </div>
-</body>
-</html>
-        <script src="js/index.js"></script>    
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-resource.min.js"></script>
+  <script src="js/ngRoute.js"></script>
+
+ <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script> -->
+   <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+      <script src="js/marked.js"></script>
+   <script src="js/angular-marked.js"></script>
+<script src="js/index.js"></script>
+
   </body>
 </html>

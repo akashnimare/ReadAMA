@@ -42,20 +42,20 @@ h1 {
   margin-bottom: 10px;
 }
 h2 {
-    font-size: 1.1em;
-    line-height: 0.85em;
+   font-size: 2.1em;
+    line-height: 2.25em;
     margin-bottom: 4px;
-    color: #888;
+    color: black;
 }
 .error 
   h2 {
-    font-size: 2.1em;
+    font-size: 3.1em;
     line-height: 0.95em;
     margin-bottom: 4px;
     color: #888;
 }
 p {
-    font-size: 0.9em;
+    font-size: 2.5em;
     line-height: 1.35em;
     margin-bottom: 12px;
 }
@@ -152,3 +152,25 @@ margin: 30px;
     padding: 10px;
 }
 
+a.active {
+    color: red !important;
+}
+
+
+.active{
+    color:red !important;
+}
+.this{
+  color: green;
+  display: none;
+}
+.userlinks{
+  margin: 0 !important;
+  color: rgba(0,0,0,.8)
+}
+
+.mdcomments a{
+  font-size:23px;
+  margin:0;
+  line-height: 0;
+}

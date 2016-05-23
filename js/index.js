@@ -1,19 +1,43 @@
-  function gitCtrl($scope, $http) {
-      $scope.getGitInfo = function () {
-         $scope.userNotFound = false;
-         $scope.loaded = false;
-         $http.get("https://api.github.com/repos/" + $scope.username + "/ama/issues?state=all&per_page=300")
-               .success(function (data) {
+var app = angular.module('AMA', ['ngRoute','hc.marked']);
+
+app.controller('gitCtrl', function($scope, $http, marked) {
+  $scope.oneAtATime = true;
+    $scope.main = 
+            {
+               page: 1
+            };
+            $scope.getGitInfo = function () 
+            {
+            $scope.userNotFound = false;
+            $scope.loaded = false;
+            $scope.nouser = false;
+            $http.get("https://api.github.com/repos/passy/ama/issues?state=all&page="+ $scope.main.page + "&per_page=100")
+                 .success(function (data) 
+                 {
                   $scope.user = data;
                   $scope.loaded = true;
-               })
-               .error(function () {
-                  $scope.userNotFound = true;
-               });
-        $scope.myFunction = function (href){
-    $http.get(href).success(function(data1) {
-    $scope.user1 = data1;
+                 })
+                  .error(function () 
+                  {
+                    $scope.userNotFound = true;
+                  });
+            $scope.UserComment = function (href)
+            {
+            $http.get(href).success(function(data1) 
+            {
+            $scope.user1 = data1;
+            });
+            }
+            }
+            $scope.nextPage = function() 
+            {
+                  $scope.main.page++;
+                  $scope.getGitInfo();
+            };
+            $scope.prePage = function() {          
+                  $scope.main.page--;
+                  $scope.getGitInfo();
+            };
+
 });
-    }
-      }
-   }
+
