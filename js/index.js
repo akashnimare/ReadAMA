@@ -11,7 +11,7 @@ app.controller('gitCtrl', function($scope, $http, marked) {
             $scope.userNotFound = false;
             $scope.loaded = false;
             $scope.nouser = false;
-            $http.get("https://api.github.com/repos/passy/ama/issues?state=all&page="+ $scope.main.page + "&per_page=100")
+            $http.get("https://api.github.com/repos/" + $scope.username + "/ama/issues?state=all&page="+ $scope.main.page + "&per_page=100")
                  .success(function (data) 
                  {
                   $scope.user = data;
