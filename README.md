@@ -1,6 +1,4 @@
-# ReadAMA
-
-Read [Awesome](https://github.com/sindresorhus/amas) AMAS [here](codepen.io/akashnimare/full/PNLvgM/).
+Read [Awesome](https://github.com/sindresorhus/amas) AMAS.
 =======
 I love reading amas of some of the [Awesome](https://github.com/sindresorhus/amas) people. It's pretty annoying when I have to open each issue in a new tab. So using Github Api and angularjs I have made this.
 
