@@ -43,8 +43,9 @@ h1 {
 }
 h2 {
    font-size: 2.1em;
-    line-height: 2.25em;
+    line-height: 1.5em;
     margin-bottom: 4px;
+margin-top: 15px;
     color: black;
 }
 .error 
@@ -60,7 +61,7 @@ p {
     margin-bottom: 12px;
 }
 a { 
-  color: #8eadd2;
+  color: #00387b;
   font-size:28px;
   text-decoration: none;
   margin:11px;
@@ -73,15 +74,17 @@ a:hover {
 #w {
   display: block;
   width: 800px;
+ /* height: 800px;*/
+  max-height: auto;
   margin: 0 auto;
-  background: #f8f8f8;
-  padding: 195px 25px;
-  -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+  /*background: #f8f8f8;
+*/  padding: 145px 25px;
+/*  -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
   -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
   box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 4px;*/
 }
 #gitapidata {
   display: block;
@@ -93,7 +96,7 @@ a:hover {
   padding: 5px 8px;
   font-size: 2.4em;
   color: #666;
-  width: 550px;
+  width: 351px;
   margin-bottom: 15px;
   margin-left:0; 
 }
@@ -146,8 +149,10 @@ margin: 30px;
 }
 
 .q {
-    margin: 20px;
+    margin: 20px 20px 20px 0px;
     text-align: left;
+    border: 1.2px solid #616161;
+    display: block;
     text-decoration: none;
     padding: 10px;
 }
@@ -166,11 +171,22 @@ a.active {
 }
 .userlinks{
   margin: 0 !important;
-  color: rgba(0,0,0,.8)
+  color: rgba(0,0,0,.4)
 }
 
 .mdcomments a{
   font-size:23px;
   margin:0;
   line-height: 0;
+}
+.mdcomments li{
+  font-size: 2.0em;
+    line-height: 1.35em;
+    margin-bottom: 12px;
+}
+.info {
+  padding:10px;
+}
+.mdcomments p{
+  color : #0e0202
 }
