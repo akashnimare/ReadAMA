@@ -14,7 +14,7 @@
    <div>
      <h1>GitHub AMA Reader</h1>
       <input type="text" id="gitusername" ng-model="username" placeholder="sindresorhus">
-      <a href="" id="gitsubmitbtn" ng-click="getGitInfo()" >Search</a>
+      <input type="submit" value="Search" id="gitsubmitbtn" ng-click="getGitInfo()" >
       <div id="gitapidata" class="clearfix"></div>
    </div>
    <div ng-show="userNotFound">
