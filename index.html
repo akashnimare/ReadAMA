@@ -27,9 +27,15 @@
                         <span ng-repeat="label in row.labels" style="color:red">{{label.name}}</span> 
                     </a>
                     <div ng-repeat="row1 in user1" class="info" ng-if="row.url == row1.issue_url">
+
+                      <span ng-show="$first"> 
+                      <h2>
+                      <a class="userlinks" href="{{row.user.html_url}}">{{row.user.login}}</a>
+                      </h2>
+                      <div class="mdcomments" marked="row.body"></div></span>
                         <h2><a class="userlinks" href="{{row1.user.html_url}}">{{row1.user.login}}</h2>
                         </a>
-
+                          
                         <div marked="row1.body" class="mdcomments">
                         </div>
                     </div>
