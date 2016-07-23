@@ -227,3 +227,6 @@ a.active {
     font-size:1.2rem;
     color:rgba(0, 0, 0, .4);
 }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
