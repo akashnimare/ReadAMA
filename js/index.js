@@ -1,6 +1,6 @@
 var app = angular.module('AMA', ['ngRoute','hc.marked']);
 
-app.controller('gitCtrl', function($scope, $http, marked) {
+app.controller('gitCtrl', function($scope, $http, $location, marked) {
   $scope.oneAtATime = true;
     $scope.main = 
             {
@@ -8,6 +8,7 @@ app.controller('gitCtrl', function($scope, $http, marked) {
             };
             $scope.getGitInfo = function () 
             {
+            $location.path($scope.username);
             $scope.userNotFound = false;
             $scope.loaded = false;
             $scope.nouser = false;
