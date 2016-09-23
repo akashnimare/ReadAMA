@@ -87,11 +87,11 @@ a:hover {
     display: block;
     width: 800px;
     /* height: 800px; */
-    
+
     max-height: auto;
     margin: 0 auto;
     /* background: #f8f8f8; */
-    
+
     padding: 130px 25px;
 }
 #gitapidata {
@@ -181,12 +181,22 @@ a:hover {
     margin: 30px;
 }
 .q {
-    margin: 20px 20px 20px 0px;
+    position: relative;
+    margin: 65px 20px 20px 0px;
     text-align: left;
     border: 1.2px solid #616161;
     display: block;
     text-decoration: none;
     padding: 10px;
+}
+.created_at {
+    position: absolute;
+    top: -31px;
+    left: 10px;
+    padding: 8px 14px;
+    color: #fff;
+    font-size: 15px;
+    background: #646464;
 }
 a.active {
     color: red !important;
@@ -197,6 +207,9 @@ a.active {
 .userlinks {
     margin: 0 !important;
     color: rgba(0, 0, 0, .4)
+}
+.commented_on {
+  font-size: 14px;
 }
 .mdcomments a {
     font-size: 23px;

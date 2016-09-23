@@ -22,21 +22,23 @@
         <div ng-show="loaded" ng-cloak>
             <div ng-repeat="row in user" class="com">
                 <div class="q">
+                    <span class="created_at">{{row.created_at | date:'yyyy-MM-dd'}}</span>
                     <a href="{{row.html_url}}" id="{{row.comments_url}}" data-toggel="modal"
-                    ng-click="UserComment($event);showComments = !showComments;$event.preventDefault();" ng-class="isActive(row)">{{row.title}}
-                        <span ng-repeat="label in row.labels" style="color:red">{{label.name}}</span> 
+                    ng-click="UserComment($event);showComments = !showComments;$event.preventDefault();" ng-class="isActive(row)">
+                        {{row.title}}
+                        <span ng-repeat="label in row.labels" style="color:red">{{label.name}}</span>
                     </a>
-                    
+
                     <div ng-show="showComments">
                         <div ng-repeat="row1 in user1" class="info" ng-if="row.url == row1.issue_url">
                             <h2>
-                                <a class="userlinks" href="{{row1.user.html_url}}">{{row1.user.login}} </a>
+                                <a class="userlinks" href="{{row1.user.html_url}}">{{row1.user.login}} </a> <span class="commented_on">{{row1.created_at | date:"yyyy-MM-dd 'at' hh:mma"}}</span>
                             </h2>
 
                         <div marked="row1.body" class="mdcomments">
-                            
+
                         </div>
-                        
+
                         <span class="add_comment" ng-show="$last">
                             <a href="{{row.html_url}}" class="cm" ng-show="$last" target="_blank">Add your Comment</a>
                         <span>
