@@ -17,16 +17,16 @@
             <div id="gitapidata" class="clearfix"></div>
         </form>
         <div ng-show="userNotFound" ng-cloak>
-            <h2>No AMA found for {{username}} see full list <a href="https://github.com/sindresorhus/amas" class="nouser">here</a></h2> .
+            <h2>No AMA found for {{usernameNotFound}} see full list <a href="https://github.com/sindresorhus/amas" class="nouser">here</a></h2> .
         </div>
         <div ng-show="loaded" ng-cloak>
             <div ng-repeat="row in user" class="com">
                 <div class="q">
                     <a href="{{row.html_url}}" id="{{row.comments_url}}" data-toggel="modal"
                     ng-click="UserComment($event);showComments = !showComments;$event.preventDefault();" ng-class="isActive(row)">{{row.title}}
-                        <span ng-repeat="label in row.labels" style="color:red">{{label.name}}</span> 
+                        <span ng-repeat="label in row.labels" style="color:red">{{label.name}}</span>
                     </a>
-                    
+
                     <div ng-show="showComments">
                         <div ng-repeat="row1 in user1" class="info" ng-if="row.url == row1.issue_url">
                             <h2>
@@ -34,9 +34,9 @@
                             </h2>
 
                         <div marked="row1.body" class="mdcomments">
-                            
+
                         </div>
-                        
+
                         <span class="add_comment" ng-show="$last">
                             <a href="{{row.html_url}}" class="cm" ng-show="$last" target="_blank">Add your Comment</a>
                         <span>
